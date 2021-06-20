@@ -6,7 +6,7 @@ import InputLabel from '../../elements/formElements/InputLabel';
 const CheckboxComponent = (props) => {
     return(
         <div style={{ marginBottom: '2em' }}>
-            <InputLabel>{props.required ? <div>Label <label style={{ color: 'red' }}>*</label></div> : 'Label' }</InputLabel>
+            <InputLabel>{props.required ? <div>{props.label} <label style={{ color: 'red' }}>*</label></div> : props.label }</InputLabel>
             {props.list.map((box, i) => {
                 return(
                     <div key={i} style={{ display: 'flex', marginTop: '1em', justifyContent: 'flex-start', alignItems: 'center' }}>

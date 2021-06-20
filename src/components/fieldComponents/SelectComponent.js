@@ -17,7 +17,7 @@ const SelectComponent = (props) => {
 
     return (
         <div style={{ marginBottom: '2em' }}>
-            <InputLabel>{props.required ? <div>Label <label style={{ color: 'red' }}>*</label></div> : 'Label' }</InputLabel>
+            <InputLabel>{props.required ? <div>{props.label} <label style={{ color: 'red' }}>*</label></div> : props.label }</InputLabel>
             <Select error={error.length > 0 ? true : false} onChange={(e) => handleBlur(e.target.value)}>
                 <Option>
                     1

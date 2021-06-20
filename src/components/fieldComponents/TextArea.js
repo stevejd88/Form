@@ -9,7 +9,7 @@ const TextAreaComponent = (props) => {
 
     const handleBlur = () => {
         if (!value && props.required) {
-            setError('Field can not be empty');
+            setError('Field cannot be empty');
         } else {
             props.onBlur(value);
             setError('');
@@ -18,8 +18,8 @@ const TextAreaComponent = (props) => {
 
     return(
         <div style={{ marginBottom: '2em' }}>
-            <InputLabel>{props.required ? <div>Label <label style={{ color: 'red' }}>*</label></div> : 'Label' }</InputLabel>
-            <TextAreaInput placeholder="Text" error={error.legnth > 0 ? true : false} onChange={(e) => setValue(e.target.value)} onBlur={handleBlur}></TextAreaInput>
+            <InputLabel>{props.required ? <div>{props.label} <label style={{ color: 'red' }}>*</label></div> : props.label }</InputLabel>
+            <TextAreaInput placeholder="Text" error={error.length > 0 ? true : false } onChange={(e) => setValue(e.target.value)} onBlur={handleBlur}></TextAreaInput>
             {error.length > 0 ? <InputError>{error}</InputError> : <></> }
         </div>
     );

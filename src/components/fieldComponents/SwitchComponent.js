@@ -9,7 +9,7 @@ const SwitchComponent = (props) => {
 
     return(
         <div style={{ marginBottom: '2em' }}>
-            <InputLabel>{required ? <div>Label <label style={{ color: 'red' }}>*</label></div> : 'Label' }</InputLabel>
+            <InputLabel>{required ? <div>{props.label} <label style={{ color: 'red' }}>*</label></div> : props.label }</InputLabel>
             <SwitchContianer onClick={() => props.onChange(!props.value)}>
                 <SwitchInput />
                 <SwitchSlider checked={props.value} ></SwitchSlider>
