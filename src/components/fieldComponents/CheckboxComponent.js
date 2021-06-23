@@ -10,8 +10,8 @@ const CheckboxComponent = (props) => {
             {props.list.map((box, i) => {
                 return(
                     <div key={i} style={{ display: 'flex', marginTop: '1em', justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <Checkbox name={box.name} value={box.value} onChange={(e) => props.onChange(e.target.checked, e.target.value)} />
-                        <CheckBoxLabel for={box.name}>
+                        <Checkbox disabled={box.disabled} name={box.name} value={box.value} onChange={(e) => props.onChange(e.target.checked, e.target.value)} />
+                        <CheckBoxLabel htmlFor={box.name}>
                             {box.value}
                         </CheckBoxLabel>
                     </div>

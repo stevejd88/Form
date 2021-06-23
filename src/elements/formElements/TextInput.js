@@ -17,4 +17,5 @@ export default styled.input`
         border-radius: 4px;
         color: #3B4256;
     }
+
 `

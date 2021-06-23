@@ -12,7 +12,7 @@ export default styled.input.attrs({ type: 'checkbox' })`
         cursor: pointer;
     }
     :checked {
-        background-color: #3B4256;
+        background-color: ${props => props.disabled ? '#B8BCCA' : '#3B4256'};
     };
     :after{
         font-family: 'Font Awesome 5 Free';
@@ -20,4 +20,5 @@ export default styled.input.attrs({ type: 'checkbox' })`
         color: white;
         content: "\f00c";
     }
+    border: ${props => props.disabled ? '1px solid #B8BCCA' : '1px solid 1px solid rgb(255,255,255,0)'};
 `

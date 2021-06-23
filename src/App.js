@@ -18,7 +18,7 @@ const APP_STYLE = {
 function App() {
   return (
     <div style={APP_STYLE}>
-      <Form />
+      <Form formName='Test Form' />
       <div style={{ paddingTop: '1em', width: '50%', minWinth: '20em', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
         <PrimaryButton>
           Submit

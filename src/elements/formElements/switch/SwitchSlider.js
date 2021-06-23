@@ -8,6 +8,7 @@ export default styled.div`
     right: 0;
     bottom: 0;
     background-color: ${props => props.checked ? '#3B4256' : '#E2E7ED'};
+    background-color: ${props => props.disabled ? props.checked ? '#B8BCCA' : '#E2E7ED' : ''};
     transition: 0.4s;
     border-radius: 1em;
     :before {

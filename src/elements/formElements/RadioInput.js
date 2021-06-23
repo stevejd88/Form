@@ -10,7 +10,7 @@ export default styled.input.attrs({ type: 'radio' })`
         cursor: pointer;
     }
     :checked{
-        background-color: #3B4256;
+        background-color: ${props => props.disabled ? '#B8BCCA' : '#3B4256'};
         border-radius: 50%;
         width: 0.6em;
         height:0.6em;

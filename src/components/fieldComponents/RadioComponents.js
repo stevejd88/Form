@@ -6,18 +6,20 @@ import RadioInput from '../../elements/formElements/RadioInput';
 const RadioComponent = (props) => {
 
     return(
-        <div style={{ marginBottom: '2em' }}>
+        <div  style={{ marginBottom: '2em' }}>
             <InputLabel>{props.required ? <div>{props.label} <label style={{ color: 'red' }}>*</label></div> : props.label }</InputLabel>
-            {props.list.map((radio, i) => {
-                return(
-                    <div key={i} style={{ display: 'flex', marginTop: '1em', justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <div style={{ width: '1em', height: '1em', borderRadius: '50%', border: '1px solid #3B4256', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <RadioInput name='radio' onChange={(e) => props.onChange(e.target.value)} value={radio.value} />
+            <div data-testid='radio_list-container'>
+                {props.list.map((radio, i) => {
+                    return(
+                        <div key={i} style={{ display: 'flex', marginTop: '1em', justifyContent: 'flex-start', alignItems: 'center' }}>
+                            <div style={{ width: '1em', height: '1em', borderRadius: '50%', border: radio.disabled ? '1px solid #B8BCCA' : '1px solid #3B4256', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <RadioInput disabled={radio.disabled} name='radio' onChange={(e) => props.onChange(e.target.value)} value={radio.value} />
+                            </div>
+                            <CheckBoxLabel htmlFor={radio.name}>{radio.value}</CheckBoxLabel>
                         </div>
-                        <CheckBoxLabel for={radio.name}>{radio.value}</CheckBoxLabel>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 }
